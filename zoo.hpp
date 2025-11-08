@@ -1,53 +1,58 @@
-#include <iostream>
-#include <vector>
-#include <string>
+#pragma once
+#include "animals.hpp"
 
-enum class Kind 
-{
-    Animal, Mammal, Bird, Reptile,
-    Lion, Tiger, Elephant,
-    Eagle, Parrot,
-    Snake, Crocodile
-};
 
-class Animal
+// Mammals
+class Lion : public Mammal
 {
-protected:
-    std::string name;
-    int health;     // 0..100
-    int hunger;     // 0..100
-    Kind _kind;
-    static int id;
+private:
+    int _roarPower;      // 1..10
 public:
-    Animal(std::string _name) : name{_name}, health{100}, hunger{0}, _kind{Kind::Animal} { std::cout << "Animal ctor " << name; }
+    Lion(std::string name) : Mammal(name) { _kind = Kind::Lion; }
     void PrintInfo() const;
-    void Feed();
-    Kind KindOf() const;
-    int Id() const { return id; }
+    //void Roar();        // print "Lion roars with power X"
 };
 
-class Mammal : public Animal
-{
-protected:
-    bool warmBlooded;
-public:
-    void MakeSound();
-};
+// class Tiger : public Mammal
+// {
+// private:
+//     double jumpHeight;;         // km/h
+//     Kind kind_ = Kind::Tiger;
+// public:
+//     void Jump();
+// };
 
-class Bird : public Animal
-{
-protected:
-    double wingSpan;
-public:
-    void Fly();
-};
+// class Elephant : public Mammal
+// {
+// private:
+//     double trunkLength;
+//     Kind kind_ = Kind::Elephant;
+// public:
+//     void UseTrunk();
+// };
 
-class Reptile : public Animal
-{
-protected:
-    bool coldBlooded;
-public:
-    void Sunbathe();
-};
+
+// // Bird
+// class Eagle : public Bird
+// {
+// private:
+//     double visionRange; // meters
+//     Kind kind_ = Kind::Eagle;
+    
+// public:
+//     void Soar();
+// };
+
+// class Parrot : public Bird
+// {
+// private:
+//     std::vector<std::string> vocabulary;     // words it can "say"
+//     Kind kind_ = Kind::Parrot;
+// public:
+//     void Speak();
+// };
+
+
+
 
 
