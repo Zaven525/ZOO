@@ -23,7 +23,7 @@ protected:
 public:
     Animal(std::string name) : _name{name}, _health{100}, _hunger{0}, _kind{Kind::Animal} {}
     void PrintInfo() const;
-    void Feed();
+    void Feed() { _hunger--; _health++; }
     Kind KindOf() const { return _kind; };
     int Id() const { return id; }
 };
@@ -31,19 +31,22 @@ public:
 class Mammal : public Animal
 {
 protected:
-    bool warmBlooded;
+    void PrintInfo() const;
+    bool _warmBlooded;
 public:
     Mammal(std::string name) : Animal(name) {}
-    void MakeSound();
+    void MakeSound() const {}
 };
 
-// class Bird : public Animal
-// {
-// protected:
-//     double wingSpan;
-// public:
-//     void Fly();
-// };
+class Bird : public Animal
+{
+protected:
+    void PrintInfo() const;
+    double _wingSpan;
+public:
+    Bird(std::string name) : Animal(name) {}
+    void Fly() {};
+};
 
 // class Reptile : public Animal
 // {

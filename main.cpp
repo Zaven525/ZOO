@@ -6,5 +6,6 @@ int main()
     std::cout << simba.KindOf();
     std::vector<Animal *> zoo;
     zoo.push_back(&simba);
+    
     return 0;
 }
