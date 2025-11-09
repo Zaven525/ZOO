@@ -34,7 +34,7 @@ protected:
     void PrintInfo() const;
     bool _warmBlooded;
 public:
-    Mammal(std::string name) : Animal(name) {}
+    Mammal(std::string name) : Animal(name), _warmBlooded{1} {}
     void MakeSound() const {}
 };
 
@@ -44,8 +44,8 @@ protected:
     void PrintInfo() const;
     double _wingSpan;
 public:
-    Bird(std::string name) : Animal(name) {}
-    void Fly() {};
+    Bird(std::string name, double wingSpan) : Animal(name), _wingSpan{wingSpan} {}
+    void Fly() { std::cout << "FLY"; };
 };
 
 // class Reptile : public Animal
