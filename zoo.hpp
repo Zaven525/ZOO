@@ -49,14 +49,39 @@ public:
     void Soar() const { std::cout << "Eagle Soars " << std::endl; }
 };
 
-// class Parrot : public Bird
-// {
-// private:
-//     std::vector<std::string> vocabulary;     // words it can "say"
-//     Kind kind_ = Kind::Parrot;
-// public:
-//     void Speak();
-// };
+class Parrot : public Bird
+{
+private:
+    std::vector<std::string> vocabulary;     // words it can "say"
+public:
+    Parrot(std::string name, double wingSpan) : Bird(name, wingSpan) { _kind = Kind::Parrot; }
+    void PrintInfo() const;
+    void teachWord(std::string word) { vocabulary.push_back(word); }
+    void Speak() { for (const auto& elem : vocabulary) {std::cout << elem;} }
+};
+
+
+//Reptile
+class Snake : public Reptile
+{
+private:
+    bool _poisiounus;
+public:
+    Snake(std::string name, bool poisiounus) : Reptile(name), _poisiounus{poisiounus} {}
+    void PrintInfo() const;
+    void Hiss() const { std::cout << "Hissing" << std::endl; }
+};
+
+class Crocodile : public Reptile
+{
+private:
+    int _biteForce;
+public:
+    Crocodile(std::string name, int biteForce) : Reptile(name), _biteForce{biteForce} {}
+    void PrintInfo() const { }
+    void Snap() const { std::cout << "Snapping" << std::endl; }
+};
+
 
 
 

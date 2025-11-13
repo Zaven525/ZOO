@@ -19,7 +19,7 @@ int main()
             case Kind::Tiger: static_cast<Tiger*>(elem)->PrintInfo(); std::cout << std::endl; break;
             case Kind::Elephant: static_cast<Elephant*>(elem)->PrintInfo(); std::cout << std::endl; break;
             case Kind::Eagle: static_cast<Eagle*>(elem)->PrintInfo(); std::cout << std::endl; break;
-            
+            case Kind::Parrot: static_cast<Parrot*>(elem)->PrintInfo(); std::cout << std::endl; break;
             default:break;
         }
     }

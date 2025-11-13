@@ -63,3 +63,32 @@ void Eagle::PrintInfo() const
     Bird::PrintInfo();
     std::cout << "VisionRange: " << _visionRange << std::endl;
 }
+
+// Parrot
+void Parrot::PrintInfo() const
+{
+    Bird::PrintInfo();
+    std::cout << "WordCount: " << vocabulary.size() << std::endl;
+}
+
+
+// Reptile
+void Reptile::PrintInfo() const
+{
+    Animal::PrintInfo();
+    std::cout << "Cold blooded" << std::endl;
+}
+
+// Snake
+void Snake::PrintInfo() const 
+{
+    Animal::PrintInfo();
+    std::cout << "Poisiounus: " << _poisiounus << std::endl;
+}
+
+// Crocodile
+void Crocodile::PrintInfo() const
+{
+    Animal::PrintInfo();
+    std::cout << "BiteForce: " << _biteForce << std::endl;
+}

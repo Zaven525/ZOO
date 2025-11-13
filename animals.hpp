@@ -28,6 +28,7 @@ public:
     int Id() const { return id; }
 };
 
+
 class Mammal : public Animal
 {
 protected:
@@ -37,6 +38,7 @@ public:
     Mammal(std::string name) : Animal(name), _warmBlooded{1} {}
     void MakeSound() const {}
 };
+
 
 class Bird : public Animal
 {
@@ -48,10 +50,15 @@ public:
     void Fly() { std::cout << "FLY"; };
 };
 
-// class Reptile : public Animal
-// {
-// protected:
-//     bool coldBlooded;
-// public:
-//     void Sunbathe();
-// };
+
+class Reptile : public Animal
+{
+protected:
+    void PrintInfo() const;
+    bool coldBlooded;
+public:
+    Reptile(std::string name) : Animal(name), coldBlooded{1} {}
+    void Sunbathe() { std::cout << "Sunbathing!!!" << std::endl; }
+};
+
+
