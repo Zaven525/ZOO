@@ -36,7 +36,6 @@ protected:
     bool _warmBlooded;
 public:
     Mammal(std::string name) : Animal(name), _warmBlooded{1} {}
-    void MakeSound() const {}
 };
 
 
@@ -62,3 +61,31 @@ public:
 };
 
 
+class IFly
+{
+    virtual void fly() = 0;
+}; 
+
+class ISwim
+{
+public:
+    virtual void swim() = 0;
+}; 
+
+class IWalk
+{
+public:
+    virtual void walk() = 0;
+}; 
+
+class IVoice
+{
+public:
+    virtual void voice() const = 0;
+}; 
+
+class IFeedable
+{
+public:
+    virtual void feed() = 0;
+};
